@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Paciente">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Cedula"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="Cédula" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Nombre"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="25" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Apellido"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="25" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FechaNacimiento"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Range
+            Maximum="01/01/2050"
+            Minimum="01/01/1900" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Sexo"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="Masculino"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Femenino"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Ambos"
+            Value="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TelefonoHabitacion"
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TelefonoCelular"
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Email"
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="100" />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="PersonasContacto"
+        Association="PersonaContacto_Paciente"
+        FromEnd="Paciente"
+        ToEnd="PersonaContacto">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Contactos" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="Medicos"
+        Association="Medico_Paciente"
+        FromEnd="Paciente"
+        ToEnd="Medico">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Médicos" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="FichasClinicas"
+        Association="FichaClinica_Paciente"
+        FromEnd="Paciente"
+        ToEnd="FichaClinica" />
+      <NavigationProperty
+        Name="ExamenesParaclinico"
+        Association="ExamenParaclinico_Paciente"
+        FromEnd="Paciente"
+        ToEnd="ExamenParaclinico">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Examenes" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="EvaluacionesNutricionales"
+        Association="EvaluacionDeIngesta_Paciente"
+        FromEnd="Paciente"
+        ToEnd="EvaluacionDeIngesta" />
+      <NavigationProperty
+        Name="Citas"
+        Association="Cita_Paciente"
+        FromEnd="Paciente"
+        ToEnd="Cita" />
+      <NavigationProperty
+        Name="EvaluacionesAntropometricas"
+        Association="EvaluacionAntropometrica_Paciente"
+        FromEnd="Paciente"
+        ToEnd="EvaluacionAntropometrica" />
+      <NavigationProperty
+        Name="Direccion"
+        Association="Direccion_Paciente"
+        FromEnd="Paciente"
+        ToEnd="Direccion">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Dirección" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UserRoles"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <NotSearchable />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="PersonaContacto_Paciente">
+    <AssociationEnd
+      Name="PersonaContacto"
+      Multiplicity="Many"
+      EntityType="PersonaContacto" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Medico_Paciente">
+    <AssociationEnd
+      Name="Medico"
+      Multiplicity="Many"
+      EntityType="Medico" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="FichaClinica_Paciente">
+    <AssociationEnd
+      Name="FichaClinica"
+      Multiplicity="Many"
+      EntityType="FichaClinica" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="ExamenParaclinico_Paciente">
+    <AssociationEnd
+      Name="ExamenParaclinico"
+      Multiplicity="Many"
+      EntityType="ExamenParaclinico" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="EvaluacionDeIngesta_Paciente">
+    <AssociationEnd
+      Name="EvaluacionDeIngesta"
+      Multiplicity="Many"
+      EntityType="EvaluacionDeIngesta" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityContainer
+    Name="NutricionDB">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Pacientes"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Paciente" />
+    <QueryOperation
+      Name="Pacientes_Single"
+      ReturnType="Paciente">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Pacientes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Pacientes_SingleOrDefault"
+      ReturnType="Paciente">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Pacientes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="PersonaContacto_Pacientes"
+      Association="PersonaContacto_Paciente">
+      <AssociationSetEnd
+        Name="PersonaContacto"
+        EntitySet="PersonasContacto" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Medico_Pacientes"
+      Association="Medico_Paciente">
+      <AssociationSetEnd
+        Name="Medico"
+        EntitySet="Medicos" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FichaClinica_Pacientes"
+      Association="FichaClinica_Paciente">
+      <AssociationSetEnd
+        Name="FichaClinica"
+        EntitySet="FichasClinicas" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ExamenParaclinico_Pacientes"
+      Association="ExamenParaclinico_Paciente">
+      <AssociationSetEnd
+        Name="ExamenParaclinico"
+        EntitySet="ExamenesParaclinico" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="EvaluacionDeIngesta_Pacientes"
+      Association="EvaluacionDeIngesta_Paciente">
+      <AssociationSetEnd
+        Name="EvaluacionDeIngesta"
+        EntitySet="EvaluacionesDeIngestas" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Cita_Pacientes"
+      Association="Cita_Paciente">
+      <AssociationSetEnd
+        Name="Cita"
+        EntitySet="Citas" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="EvaluacionAntropometrica_Pacientes"
+      Association="EvaluacionAntropometrica_Paciente">
+      <AssociationSetEnd
+        Name="EvaluacionAntropometrica"
+        EntitySet="EvaluacionesAntropometricas" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Direccion_Pacientes"
+      Association="Direccion_Paciente">
+      <AssociationSetEnd
+        Name="Direccion"
+        EntitySet="Direcciones" />
+      <AssociationSetEnd
+        Name="Paciente"
+        EntitySet="Pacientes" />
+    </AssociationSet>
+  </EntityContainer>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <AssociationSetMapping
+      AssociationSet="PersonaContacto_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="PersonaContacto_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[PersonaContacto_Pacientes]/Members[PersonaContacto]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PersonaContacto_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[PersonaContacto_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Medico_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Medico_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Medico_Pacientes]/Members[Medico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Medico_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Medico_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FichaClinica_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FichaClinica_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[FichaClinica_Pacientes]/Members[FichaClinica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FichaClinica_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[FichaClinica_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ExamenParaclinico_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ExamenParaclinico_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[ExamenParaclinico_Pacientes]/Members[ExamenParaclinico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ExamenParaclinico_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[ExamenParaclinico_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="EvaluacionDeIngesta_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="EvaluacionNutricional_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[EvaluacionDeIngesta_Pacientes]/Members[EvaluacionDeIngesta]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EvaluacionNutricional_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[EvaluacionDeIngesta_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Cita_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Cita_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Cita_Pacientes]/Members[Cita]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Cita_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Cita_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="EvaluacionAntropometrica_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="EvaluacionAntropometrica_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[EvaluacionAntropometrica_Pacientes]/Members[EvaluacionAntropometrica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EvaluacionAntropometrica_Paciente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[EvaluacionAntropometrica_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Direccion_Pacientes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Direccion_Pacientes" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Direccion_Pacientes]/Members[Direccion]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Direccion_Pacientes]/Members[Paciente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="Cita_Paciente">
+    <AssociationEnd
+      Name="Cita"
+      Multiplicity="Many"
+      EntityType="Cita" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="EvaluacionAntropometrica_Paciente">
+    <AssociationEnd
+      Name="EvaluacionAntropometrica"
+      Multiplicity="Many"
+      EntityType="EvaluacionAntropometrica" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Direccion_Paciente">
+    <AssociationEnd
+      Name="Direccion"
+      EntityType="Direccion" />
+    <AssociationEnd
+      Name="Paciente"
+      Multiplicity="One"
+      EntityType="Paciente">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+</ServiceApplication>

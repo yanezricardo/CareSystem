@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' != 'Release' ">
+    <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>99b23a0f-9609-4200-8731-395fa4618676</ProjectGuid>
+    <LightSwitchVersion>v5.0</LightSwitchVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <LightSwitchProjectTypeV45>Client</LightSwitchProjectTypeV45>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.props" />
+  <PropertyGroup>
+    <!--TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion-->
+    <LightSwitchProjectSubType>JScript</LightSwitchProjectSubType>
+    <ProjectTypeGuids>{8BB0C5E8-0616-4F60-8E55-A43933E57E9C};{262852C6-CD72-467D-83FE-5EEB1973A190}</ProjectTypeGuids>
+    <DefaultLanguage>es</DefaultLanguage>
+    <SupportedCultures>es</SupportedCultures>
+    <DefaultPlatform>AnyCPU</DefaultPlatform>
+    <ClientProjectName>Pacientes</ClientProjectName>
+    <ServerProjectReference>..\CareSystem.Server\CareSystem.Server.csproj</ServerProjectReference>
+    <LightSwitchDisplayName>Pacientes</LightSwitchDisplayName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Content\dark-theme-2.5.4.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\female-body-front-and-back.jpg" />
+    <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-18-white.png" />
+    <Content Include="Content\Images\icons-36-black.png" />
+    <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\msls-black-icons-18.png" />
+    <Content Include="Content\Images\msls-black-icons-36.png" />
+    <Content Include="Content\Images\msls-blue-icons-36.png" />
+    <Content Include="Content\Images\msls-loader-dark.gif" />
+    <Content Include="Content\Images\msls-loader-light.gif" />
+    <Content Include="Content\Images\msls-white-icons-18.png" />
+    <Content Include="Content\Images\msls-white-icons-36.png" />
+    <Content Include="Content\Images\user-bell_service-75.png" />
+    <Content Include="Content\Images\user-calendar-64.png" />
+    <Content Include="Content\Images\user-contact_card-75.png" />
+    <Content Include="Content\Images\user-folder-64.png" />
+    <Content Include="Content\Images\user-line_chart-75.png" />
+    <Content Include="Content\Images\user-triangular_bandage-64.png" />
+    <Content Include="Content\Images\user-triangular_bandage2-64.png" />
+    <Content Include="Content\jquery.mobile-1.3.2.css" />
+    <Content Include="Content\jquery.mobile-1.3.2.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.2.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.2.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.2.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.2.min.css" />
+    <Content Include="Content\light-theme-2.5.4.css" />
+    <Content Include="Content\msls-2.5.4.css" />
+    <Content Include="Content\msls-2.5.4.min.css" />
+    <Content Include="Content\msls-dark-2.5.4.css" />
+    <Content Include="Content\msls-dark.css" />
+    <Content Include="Content\msls-light-2.5.4.css" />
+    <Content Include="Content\msls-light.css" />
+    <Content Include="default.htm" />
+    <Content Include="Content\user-customization.css" />
+    <Content Include="Content\Images\user-logo.png" />
+    <Content Include="Content\Images\user-splash-screen.png" />
+    <Content Include="Content\Web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Screens\AddEditAlimento.lsml.js">
+      <DependentUpon>AddEditAlimento.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditAntecedente.lsml.js">
+      <DependentUpon>AddEditAntecedente.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditAntecedenteFamiliar.lsml.js">
+      <DependentUpon>AddEditAntecedenteFamiliar.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditCita.lsml.js">
+      <DependentUpon>AddEditCita.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditComida.lsml.js">
+      <DependentUpon>AddEditComida.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditEvaluacionAntropometrica.lsml.js">
+      <DependentUpon>AddEditEvaluacionAntropometrica.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditEvaluacionDeIngesta.lsml.js">
+      <DependentUpon>AddEditEvaluacionDeIngesta.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditExamenParaclinico.lsml.js">
+      <DependentUpon>AddEditExamenParaclinico.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditFichaClinica.lsml.js">
+      <DependentUpon>AddEditFichaClinica.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditHabitoPsicobiologico.lsml.js">
+      <DependentUpon>AddEditHabitoPsicobiologico.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditMedico.lsml.js">
+      <DependentUpon>AddEditMedico.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditPaciente.lsml.js">
+      <DependentUpon>AddEditPaciente.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AddEditPersonaContacto.lsml.js">
+      <DependentUpon>AddEditPersonaContacto.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseEvaluacionesAntropometricas.lsml.js">
+      <DependentUpon>BrowseEvaluacionesAntropometricas.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseExamenesParaclinicos.lsml.js">
+      <DependentUpon>BrowseExamenesParaclinicos.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseFichasClinicas.lsml.js">
+      <DependentUpon>BrowseFichasClinicas.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowsePacientes.lsml.js">
+      <DependentUpon>BrowsePacientes.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\MainHistoriaClinica.lsml.js">
+      <DependentUpon>MainHistoriaClinica.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\MainPaciente.lsml.js">
+      <DependentUpon>MainPaciente.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Main.lsml.js">
+      <DependentUpon>Main.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewCita.lsml.js">
+      <DependentUpon>ViewCita.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewCitasDePaciente.lsml.js">
+      <DependentUpon>ViewCitasDePaciente.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewEvaluacionDeIngesta.lsml.js">
+      <DependentUpon>ViewEvaluacionDeIngesta.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewExamenParaclinico.lsml.js">
+      <DependentUpon>ViewExamenParaclinico.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewFichaClinica.lsml.js">
+      <DependentUpon>ViewFichaClinica.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewPaciente.lsml.js">
+      <DependentUpon>ViewPaciente.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewPacienteDatosDeIdentificacion.lsml.js">
+      <DependentUpon>ViewPacienteDatosDeIdentificacion.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewPacienteHistoriaNutricional.lsml.js">
+      <DependentUpon>ViewPacienteHistoriaNutricional.lsml</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datajs-1.1.1.js" />
+    <Content Include="Scripts\datajs-1.1.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery.mobile-1.3.0-vsdoc.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.2.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.2.min.map" />
+    <Content Include="Scripts\lang\es.js" />
+    <Content Include="Scripts\moment-with-langs.js" />
+    <Content Include="Scripts\moment-with-langs.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\msls-2.5.4-vsdoc.js" />
+    <Content Include="Scripts\msls-2.5.4.js" />
+    <Content Include="Scripts\msls-2.5.4.min.js" />
+    <Content Include="Scripts\msls.js" />
+    <Content Include="Scripts\winjs-1.0.js" />
+    <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\Alimento.lsml.js" />
+    <Content Include="UserCode\Antecedente.lsml.js" />
+    <Content Include="UserCode\AntecedenteFamiliar.lsml.js" />
+    <Content Include="UserCode\Cita.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\Comida.lsml.js" />
+    <Content Include="UserCode\EvaluacionAntropometrica.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\EvaluacionDeIngesta.lsml.js" />
+    <Content Include="UserCode\ExamenParaclinico.lsml.js" />
+    <Content Include="UserCode\FichaClinica.lsml.js" />
+    <Content Include="UserCode\OtrosHabitos.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\Paciente.lsml.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceMetadataReference Include="..\CareSystem.Server\CareSystem.Server.csproj">
+      <Visible>false</Visible>
+    </ServiceMetadataReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LightSwitchModel Include="Properties\Client.lsml">
+      <ProjectCritical>true</ProjectCritical>
+    </LightSwitchModel>
+    <LightSwitchModel Include="Properties\NutricionDB\Citas.lsml" />
+    <LightSwitchModel Include="Properties\NutricionDB\EvaluacionesAntropometricas.lsml" />
+    <LightSwitchModel Include="Properties\NutricionDB\FichasClinicas.lsml" />
+    <LightSwitchModel Include="Properties\NutricionDB\Pacientes.lsml" />
+    <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\AddEditAlimento.lsml" />
+    <LightSwitchModel Include="Screens\AddEditAntecedente.lsml" />
+    <LightSwitchModel Include="Screens\AddEditAntecedenteFamiliar.lsml" />
+    <LightSwitchModel Include="Screens\AddEditCita.lsml" />
+    <LightSwitchModel Include="Screens\AddEditComida.lsml" />
+    <LightSwitchModel Include="Screens\AddEditEvaluacionAntropometrica.lsml" />
+    <LightSwitchModel Include="Screens\AddEditEvaluacionDeIngesta.lsml" />
+    <LightSwitchModel Include="Screens\AddEditExamenParaclinico.lsml" />
+    <LightSwitchModel Include="Screens\AddEditFichaClinica.lsml" />
+    <LightSwitchModel Include="Screens\AddEditHabitoPsicobiologico.lsml" />
+    <LightSwitchModel Include="Screens\AddEditMedico.lsml" />
+    <LightSwitchModel Include="Screens\AddEditOtrosHabitos.lsml" />
+    <LightSwitchModel Include="Screens\AddEditPaciente.lsml" />
+    <LightSwitchModel Include="Screens\AddEditPersonaContacto.lsml" />
+    <LightSwitchModel Include="Screens\BrowseEvaluacionesAntropometricas.lsml" />
+    <LightSwitchModel Include="Screens\BrowseExamenesParaclinico.lsml" />
+    <LightSwitchModel Include="Screens\BrowseExamenesParaclinicos.lsml" />
+    <LightSwitchModel Include="Screens\BrowsePacientes.lsml" />
+    <LightSwitchModel Include="Screens\MainHistoriaClinica.lsml" />
+    <LightSwitchModel Include="Screens\MainPaciente.lsml" />
+    <LightSwitchModel Include="Screens\MainEstadisticas.lsml" />
+    <LightSwitchModel Include="Screens\Main.lsml" />
+    <LightSwitchModel Include="Screens\ViewCita.lsml" />
+    <LightSwitchModel Include="Screens\ViewCitasDePaciente.lsml" />
+    <LightSwitchModel Include="Screens\ViewEvaluacionAntropometrica.lsml" />
+    <LightSwitchModel Include="Screens\ViewEvaluacionDeIngesta.lsml" />
+    <LightSwitchModel Include="Screens\ViewExamenParaclinico.lsml" />
+    <LightSwitchModel Include="Screens\ViewFichaClinica.lsml" />
+    <LightSwitchModel Include="Screens\BrowseFichasClinicas.lsml" />
+    <LightSwitchModel Include="Screens\ViewPaciente.lsml" />
+    <LightSwitchModel Include="Screens\ViewPacienteDatosDeIdentificacion.lsml" />
+    <LightSwitchModel Include="Screens\ViewPacienteHistoriaNutricional.lsml" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ClientBuildFile Include="GeneratedArtifacts\model.json">
+      <SubFolder>Content\Resources\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\data.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\viewModel.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\usercode.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\Microsoft.LightSwitch.Build.Tasks.targets" />
+  <!-- Redefine the targets to be empty -->
+  <Target Name="GetXapOutputFile" />
+  <PropertyGroup>
+    <AppxPackage>false</AppxPackage>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

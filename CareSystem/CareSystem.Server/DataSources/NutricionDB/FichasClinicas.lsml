@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="FichaClinica">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Fichas Clínicas" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Fecha"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Diagnostico"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+          <DisplayName
+            Value="Diagnóstico" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Enfermedad"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Midicamento"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SuplementoNutricional"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Anamnesis"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExamenFisico"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+          <DisplayName
+            Value="Exámen Fisico" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PoseeEquipoMedico"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Posee Equipo Médico" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DescripcionEquipoMedico"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Descripción Equipo Médico" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EstadoFisicoDependiente"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Estado Físico Dependiente" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EstadoMentalDeteriorado"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EstadoMentalDepresivo"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RiesgoUlceraPorPresion"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Riesgo Ulcera Por Presión" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TratamientoNutricional"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ViaAdministracion"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Via Administración" />
+          <SupportedValue
+            DisplayName="Enteral Oral"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Enteral Sonda Nasogástrica"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Enteral Gastrostomía"
+            Value="2" />
+          <SupportedValue
+            DisplayName="Enteral Yeyunostomía"
+            Value="3" />
+          <SupportedValue
+            DisplayName="Parenteral Periférica"
+            Value="4" />
+          <SupportedValue
+            DisplayName="Parenteral Central"
+            Value="5" />
+          <SupportedValue
+            DisplayName="Mixta"
+            Value="6" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FechaColocacionTratamientoNutricional"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Fecha Colocación Tratamiento Nutricional" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Procedimiento"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ViaAdministracionApta"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="Via Administración Apta" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EsquemaAlimentacion"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Esquema Nutrición" />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ToleranciaTratamientoNutricional"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UsaBomba"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Deambula"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ObservacionesDeambula"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Observaciones" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Circunferencia"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DiagnosticoNutricional"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+          <DisplayName
+            Value="Diagnóstico Nutricional" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Comentarios"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="InclusionDelPaciente"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Inclusión del Paciente" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Paciente"
+        Association="FichaClinica_Paciente"
+        FromEnd="FichaClinica"
+        ToEnd="Paciente" />
+      <NavigationProperty
+        Name="Antecedentes"
+        Association="Antecedente_FichaClinica"
+        FromEnd="FichaClinica"
+        ToEnd="Antecedente" />
+      <NavigationProperty
+        Name="AntecedentesFamiliares"
+        Association="AntecedenteFamiliar_FichaClinica"
+        FromEnd="FichaClinica"
+        ToEnd="AntecedenteFamiliar" />
+      <NavigationProperty
+        Name="HabitosPsicobiologicos"
+        Association="HabitoPsicobiologico_FichaClinica"
+        FromEnd="FichaClinica"
+        ToEnd="HabitoPsicobiologico" />
+      <NavigationProperty
+        Name="OtrosHabitos"
+        Association="OtrosHabitos_FichaClinica"
+        FromEnd="FichaClinica"
+        ToEnd="OtrosHabitos" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="NutricionDB">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="FichasClinicas"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="FichaClinica" />
+    <QueryOperation
+      Name="FichasClinicas_Single"
+      ReturnType="FichaClinica">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FichasClinicas" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FichasClinicas_SingleOrDefault"
+      ReturnType="FichaClinica">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FichasClinicas" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="Antecedente_FichaClinicas"
+      Association="Antecedente_FichaClinica">
+      <AssociationSetEnd
+        Name="Antecedente"
+        EntitySet="Antecedentes" />
+      <AssociationSetEnd
+        Name="FichaClinica"
+        EntitySet="FichasClinicas" />
+    </AssociationSet>
+    <AssociationSet
+      Name="AntecedenteFamiliar_FichaClinicas"
+      Association="AntecedenteFamiliar_FichaClinica">
+      <AssociationSetEnd
+        Name="AntecedenteFamiliar"
+        EntitySet="AntecedentesFamiliares" />
+      <AssociationSetEnd
+        Name="FichaClinica"
+        EntitySet="FichasClinicas" />
+    </AssociationSet>
+    <AssociationSet
+      Name="HabitoPsicobiologico_FichaClinicas"
+      Association="HabitoPsicobiologico_FichaClinica">
+      <AssociationSetEnd
+        Name="HabitoPsicobiologico"
+        EntitySet="HabitosPsicobiologicos" />
+      <AssociationSetEnd
+        Name="FichaClinica"
+        EntitySet="FichasClinicas" />
+    </AssociationSet>
+    <AssociationSet
+      Name="OtrosHabitos_FichaClinicas"
+      Association="OtrosHabitos_FichaClinica">
+      <AssociationSetEnd
+        Name="OtrosHabitos"
+        EntitySet="OtrosHabitosSet" />
+      <AssociationSetEnd
+        Name="FichaClinica"
+        EntitySet="FichasClinicas" />
+    </AssociationSet>
+  </EntityContainer>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="FichasClinicas">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="FichaClinica_Paciente"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Antecedente_FichaClinicas">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Antecedente_FichaClinicas" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Antecedente_FichaClinicas]/Members[Antecedente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Antecedente_FichaClinica" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[Antecedente_FichaClinicas]/Members[FichaClinica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="AntecedenteFamiliar_FichaClinicas">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="AntecedenteFamiliar_FichaClinicas" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[AntecedenteFamiliar_FichaClinicas]/Members[AntecedenteFamiliar]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="AntecedenteFamiliar_FichaClinica" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[AntecedenteFamiliar_FichaClinicas]/Members[FichaClinica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="HabitoPsicobiologico_FichaClinicas">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="HabitoPsicobiologico_FichaClinicas" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[HabitoPsicobiologico_FichaClinicas]/Members[HabitoPsicobiologico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="HabitoPsicobiologico_FichaClinica" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[HabitoPsicobiologico_FichaClinicas]/Members[FichaClinica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="OtrosHabitos_FichaClinicas">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OtrosHabitos_FichaClinicas" />
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[OtrosHabitos_FichaClinicas]/Members[OtrosHabitos]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="NutricionDB/Members[OtrosHabitos_FichaClinicas]/Members[FichaClinica]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="Antecedente_FichaClinica">
+    <AssociationEnd
+      Name="Antecedente"
+      Multiplicity="Many"
+      EntityType="Antecedente" />
+    <AssociationEnd
+      Name="FichaClinica"
+      Multiplicity="One"
+      EntityType="FichaClinica">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="AntecedenteFamiliar_FichaClinica">
+    <AssociationEnd
+      Name="AntecedenteFamiliar"
+      Multiplicity="Many"
+      EntityType="AntecedenteFamiliar" />
+    <AssociationEnd
+      Name="FichaClinica"
+      Multiplicity="One"
+      EntityType="FichaClinica">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="HabitoPsicobiologico_FichaClinica">
+    <AssociationEnd
+      Name="HabitoPsicobiologico"
+      Multiplicity="Many"
+      EntityType="HabitoPsicobiologico" />
+    <AssociationEnd
+      Name="FichaClinica"
+      Multiplicity="One"
+      EntityType="FichaClinica">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="OtrosHabitos_FichaClinica">
+    <AssociationEnd
+      Name="OtrosHabitos"
+      EntityType="OtrosHabitos" />
+    <AssociationEnd
+      Name="FichaClinica"
+      Multiplicity="One"
+      EntityType="FichaClinica">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+</ServiceApplication>
